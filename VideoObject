@@ -1,0 +1,69 @@
+{
+    "kind": "youtube#video",
+    "etag": "7nwrbIY2wVc_RN_yDiMwfUPf1BE",
+    "id": "BtytYWhg2mc",
+    "snippet": {
+        "publishedAt": "2024-03-19T15:00:14Z",
+        "channelId": "UCZGYJFUizSax-yElQaFDp5Q",
+        "title": "The Acolyte | Official Trailer | Disney+",
+        "description": "In an age of light, a darkness rises.\n\nOn June 4, don’t miss the two-episode premiere of #TheAcolyte, a Star Wars Original series, only on Disney+.",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/BtytYWhg2mc/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/BtytYWhg2mc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/BtytYWhg2mc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/BtytYWhg2mc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/BtytYWhg2mc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "Star Wars",
+        "tags": [
+            "star wars",
+            "jedi",
+            "the acolyte",
+            "lucasfilm",
+            "the high republic",
+            "lightsabers"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "localized": {
+            "title": "The Acolyte | Official Trailer | Disney+",
+            "description": "In an age of light, a darkness rises.\n\nOn June 4, don’t miss the two-episode premiere of #TheAcolyte, a Star Wars Original series, only on Disney+."
+        },
+        "defaultAudioLanguage": "en-US"
+    },
+    "contentDetails": {
+        "duration": "PT1M46S",
+        "dimension": "2d",
+        "definition": "hd",
+        "caption": "true",
+        "licensedContent": true,
+        "contentRating": {},
+        "projection": "rectangular"
+    },
+    "statistics": {
+        "viewCount": "7399341",
+        "likeCount": "152245",
+        "favoriteCount": "0",
+        "commentCount": "26969"
+    }
+}
