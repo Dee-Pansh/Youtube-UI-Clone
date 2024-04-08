@@ -6,25 +6,41 @@ import Shimmer from "./Shimmer";
 import { VIDEO_COMMENTS_API } from "../utils/constants";
 import Comments from './Comments';
 import Suggestion from "./Suggestion";
+import CommentsContainer from "./CommentsContainer";
+
+
+/*
+Comment Component Conditional Rendering
+ {
+  comments.length === 0
+    ?
+    <Shimmer />
+    :
+    <Comments comments={comments} />
+} 
+*/
+
+
+
 
 const WatchPage = () => {
 
   const [searchParams] = useSearchParams()
   const id = searchParams.get("v");
   const dispatch = useDispatch();
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
 
   useEffect(() => {
     dispatch(closeMenu());
-    fetchComments();
+    // fetchComments();
   }, []);
 
 
-  const fetchComments = async () => {
-    const data = await fetch(VIDEO_COMMENTS_API + id);
-    const json = await data.json();
-    setComments(json.items);
-  }
+  // const fetchComments = async () => {
+  //   const data = await fetch(VIDEO_COMMENTS_API + id);
+  //   const json = await data.json();
+  //   setComments(json.items);
+  // }
 
   return (
     <div className='flex flex-col mx-auto w-[90%]'>
@@ -40,16 +56,10 @@ const WatchPage = () => {
           allowFullScreen
         >
         </iframe>
-        <Suggestion videoId={id}/>
+        <Suggestion videoId={id} />
       </div>
 
-      {
-        comments.length === 0
-          ?
-          <Shimmer />
-          :
-          <Comments comments={comments} />
-      }
+      <CommentsContainer/>
 
     </div>
   )
