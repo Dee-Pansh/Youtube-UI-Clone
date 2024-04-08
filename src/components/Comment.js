@@ -1,5 +1,5 @@
 import React from 'react'
-import useFetchComment from '../utils/Hooks/useFetchComment'
+import useFetchComment from "../utils/Hooks/ApiCalling/useFetchComment";
 import useCalculateTime from "../utils/Hooks/useCalculateTime";
 
 

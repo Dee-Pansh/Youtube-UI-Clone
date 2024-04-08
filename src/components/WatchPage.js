@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import Shimmer from "./Shimmer";
 import { VIDEO_COMMENTS_API } from "../utils/constants";
 import Comments from './Comments';
+import Suggestion from "./Suggestion";
 
 const WatchPage = () => {
 
@@ -26,8 +27,9 @@ const WatchPage = () => {
   }
 
   return (
-    <div className='flex flex-col ml-6'>
-      <div>
+    <div className='flex flex-col mx-auto w-[90%]'>
+
+      <div className='flex justify-between'>
         <iframe className='rounded-3xl'
           width="1000"
           height="550"
@@ -38,14 +40,17 @@ const WatchPage = () => {
           allowFullScreen
         >
         </iframe>
+        <Suggestion videoId={id}/>
       </div>
-        {
-        comments.length === 0 
-        ?
-        <Shimmer /> 
-        :
-        <Comments comments={comments}/>
-        }
+
+      {
+        comments.length === 0
+          ?
+          <Shimmer />
+          :
+          <Comments comments={comments} />
+      }
+
     </div>
   )
 }

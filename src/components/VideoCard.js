@@ -4,11 +4,10 @@ const VideoCard = ({ videoDetails }) => {
 
   const { snippet } = videoDetails
   const { statistics } = videoDetails
-  const { viewCount } = statistics
+  const { viewCount } = statistics 
   const { title, channelTitle, publishedAt } = snippet
   const thumbNailDetails = snippet?.thumbnails?.medium
   const { url } = thumbNailDetails
-
 
   const customizeCount = (count) => {
     const billion = 1e9;
@@ -23,8 +22,6 @@ const VideoCard = ({ videoDetails }) => {
     return `${count}`
   }
 
-
-
   return <Link to={`/watch?v=${videoDetails.id}`} ><div className="p-3 pl-0 w-60 m-2 ml-0 shadow-lg">
     <img src={url} alt="thumbnail" className="w-[100%] rounded-xl" />
     <p>{title}</p>
@@ -34,4 +31,25 @@ const VideoCard = ({ videoDetails }) => {
   </Link>
 
 }
+
+const convertTime=(input)=>{
+  if(input.includes("H"))
+{
+const output=input.match(/PT(\d+)H(\d+)M(\d+)S/)
+return `${output[1].padStart('2','0')}:${output[2].padStart('2','0')}:${output[3].padStart('2','0')}`
+}
+else if(input.includes("M"))
+{
+const output=input.match(/PT(\d+)M(\d+)S/)
+return `${output[1].padStart('2','0')}:${output[2].padStart('2','0')}`
+}
+else if(input.includes("S"))
+{
+const output=input.match(/PT(\d+)S/)   
+return `${output[1].padStart('2','0')}`
+}
+}
+
+
+
 export default VideoCard

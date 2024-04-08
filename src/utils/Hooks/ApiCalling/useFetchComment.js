@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { COMMENT_API } from '../constants';
+import { COMMENT_API } from '../../constants';
 
 const useFetchComment = (id) => {
     const [comment, setComment] = useState({});
@@ -7,7 +7,6 @@ const useFetchComment = (id) => {
     const fetchComment=async()=>{
         const data=await fetch(COMMENT_API+id);
         const json=await data.json();
-        console.log(json.items[0]["snippet"]["topLevelComment"]["snippet"]);
         setComment(json.items[0]["snippet"]["topLevelComment"]["snippet"]);
     }
    return comment;
