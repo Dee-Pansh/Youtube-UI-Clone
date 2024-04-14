@@ -17,6 +17,7 @@
 # URLSearchParams
 ## It is a javascript object which is used to perform operations on the qurey parameters present inside the url
 ## Query string parameters are the part of a URL that comes after the '?' character and typically consists of key-value pairs separated by '&' characters. For example, in the URL https://example.com?page=2&limit=10, the query string parameters are page=2 and limit=10.
+
 <pre>
 
 

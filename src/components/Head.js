@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import hamburger from "../utils/Images/hamburger-menu.svg"
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from "../utils/myAppSlice"
 import SearchSuggestions from './SearchSuggestions'
 import { YOUTUBE_SEARCH_SUGGESTION } from '../utils/constants'
 import { cacheResults } from '../utils/searchSlice'
-
+import { searchContext } from '../context/searchContext'
 
 const Head = () => {
   
   const [input, setInput] = useState("");
+  const [showSuggestions,setShowSuggestions]=useState(true);
   const [suggestions, setSuggestions] = useState([]);
   const caches = useSelector(store => store.search);
   const dispatch = useDispatch();
-
+  const {setSearch}=useContext(searchContext);
   useEffect(() => {
     if (caches[input])
       setSuggestions(caches[input])
@@ -36,6 +37,10 @@ const Head = () => {
     setSuggestions(json[1]);
   }
 
+  const handleEnterBtn=(event)=>{
+    if(event.key==="Enter")
+    setSearch(input);
+  }
 
   const handleClick = () => {
     dispatch(toggleMenu());
@@ -53,9 +58,9 @@ const Head = () => {
 
       {/* Middle Section */}
       <div className='flex h-[50px]'>
-        <input type="text" value={input} className='border-2 rounded-l-3xl outline-none w-[85%] p-2' onChange={(event) => setInput(event.target.value)} placeholder='Search' />
+        <input type="text" value={input} className='border-2 rounded-l-3xl outline-none w-[85%] p-2' onChange={(event) => setInput(event.target.value)} onFocus={()=>setShowSuggestions(true)} placeholder='Search' onKeyPress={handleEnterBtn}/>
         <button className='border-2 rounded-r-3xl w-[12%] bg-gray-200'>🔍</button>
-        {suggestions.length !== 0 && <SearchSuggestions suggestions={suggestions} />}
+        {showSuggestions && suggestions.length!==0 && <SearchSuggestions setShowSuggestions={()=>setShowSuggestions()} suggestions={suggestions} />}
       </div>
 
 

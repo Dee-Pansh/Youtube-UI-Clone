@@ -80,12 +80,14 @@ const commentsData=[
 
 const Comment=({data})=>{
     const {name,text,replies}=data
+    console.log("replies: ",replies);
     return (
-        <div className='flex bg-gray-200 rounded-lg w-[50vw] m-2'>
+        <div className='flex border border-l-2 rounded-lg w-[50vw] m-2'>
             <img className='w-12 h-12' alt='user' src='https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg'/>
             <div className='px-3'>
                 <p className='font-bold'>{name}</p>
                 <p>{text}</p>
+                {replies && <CommentsList comment={replies}/>}
             </div>
         </div>
     ) 

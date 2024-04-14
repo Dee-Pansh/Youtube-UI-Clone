@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Body from "./components/Body";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import { SearchContextProvider } from "./context/searchContext";
 const routes=createBrowserRouter([
   {
     path:"/",
@@ -24,12 +25,14 @@ const routes=createBrowserRouter([
 
 function App() {
   return (
+    <SearchContextProvider>
     <Provider store={store}>
     <div>
       <Head/>
       <RouterProvider router={routes} />
     </div>
-    </Provider>
+    </Provider> 
+    </SearchContextProvider>
   )
 }
 
