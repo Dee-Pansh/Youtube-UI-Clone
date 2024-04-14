@@ -73,3 +73,12 @@ new settimeout will be there and fetchSuggestions() will be called after 200 mse
 
 >When no new keystroke is press then a new settimeout will be there and fetchSuggestions() will be called after 200 msecs
 
+
+
+
+### Loading Live Video Comments
+#### Issues :
+> #### Data Layer : Getting live data
+> #### UI Layer : Getting Data Updated on webpage
+
+# Watch from :  [11:50](https://namastedev.com/learn/namaste-react/wrapping-up-youtube-project)
