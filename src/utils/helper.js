@@ -1,0 +1,90 @@
+var nameList = [
+    'Time','Past','Future','Dev',
+    'Fly','Flying','Soar','Soaring','Power','Falling',
+    'Fall','Jump','Cliff','Mountain','Rend','Red','Blue',
+    'Green','Yellow','Gold','Demon','Demonic','Panda','Cat',
+    'Kitty','Kitten','Zero','Memory','Trooper','XX','Bandit',
+    'Fear','Light','Glow','Tread','Deep','Deeper','Deepest',
+    'Mine','Your','Worst','Enemy','Hostile','Force','Video',
+    'Game','Donkey','Mule','Colt','Cult','Cultist','Magnum',
+    'Gun','Assault','Recon','Trap','Trapper','Redeem','Code',
+    'Script','Writer','Near','Close','Open','Cube','Circle',
+    'Geo','Genome','Germ','Spaz','Shot','Echo','Beta','Alpha',
+    'Gamma','Omega','Seal','Squid','Money','Cash','Lord','King',
+    'Duke','Rest','Fire','Flame','Morrow','Break','Breaker','Numb',
+    'Ice','Cold','Rotten','Sick','Sickly','Janitor','Camel','Rooster',
+    'Sand','Desert','Dessert','Hurdle','Racer','Eraser','Erase','Big',
+    'Small','Short','Tall','Sith','Bounty','Hunter','Cracked','Broken',
+    'Sad','Happy','Joy','Joyful','Crimson','Destiny','Deceit','Lies',
+    'Lie','Honest','Destined','Bloxxer','Hawk','Eagle','Hawker','Walker',
+    'Zombie','Sarge','Capt','Captain','Punch','One','Two','Uno','Slice',
+    'Slash','Melt','Melted','Melting','Fell','Wolf','Hound',
+    'Legacy','Sharp','Dead','Mew','Chuckle','Bubba','Bubble','Sandwich',
+    'Smasher','Extreme','Multi','Universe','Ultimate','Death','Ready',
+    'Monkey','Elevator','Wrench','Grease','Head','Theme','Grand','Cool',
+    'Kid','Boy','Girl','Vortex','Paradox'
+];
+
+export function getRandomName() {
+   return nameList[Math.floor( Math.random() * nameList.length )];
+};
+
+// Array of text messages
+const textMessages = [
+    "Hey there! How's it going?",
+    "Just wanted to say hi!",
+    "Remember to take breaks while studying!",
+    "Hope you're having a great day!",
+    "Don't forget to smile today 😊",
+    "You're doing amazing!",
+    "Sending positive vibes your way!",
+    "Hang in there, you got this!",
+    "Believe in yourself!",
+    "Keep pushing forward!",
+    "You're capable of great things!",
+    "You're awesome!",
+    "You're one of a kind!",
+    "Dream big!",
+    "Stay motivated!",
+    "You're unstoppable!",
+    "Never give up!",
+    "Success is just around the corner!",
+    "Chase your dreams!",
+    "You're a superstar!",
+    "You're a champion!",
+    "You're incredible!",
+    "You're inspiring!",
+    "You're a ray of sunshine!",
+    "You're a rockstar!",
+    "You're a true gem!",
+    "You're a warrior!",
+    "You're a hero!",
+    "You're a legend!",
+    "You're a boss!",
+    "You're a master!",
+    "You're a wizard!",
+    "You're a genius!",
+    "You're a miracle!",
+    "You're a blessing!",
+    "You're a gift!",
+    "You're a treasure!",
+    "You're a delight!",
+    "You're a joy!",
+    "You're a wonder!",
+    "You're a marvel!",
+    "You're a beauty!",
+    "You're a masterpiece!",
+    "You're a work of art!",
+    "You're a masterpiece!",
+    "You're a treasure!",
+    "You're a delight!",
+    "You're a joy!",
+    "You're a wonder!",
+    "You're a marvel!",
+    "You're a beauty!"
+];
+
+// Function to get a random message from the array
+export function getRandomMessage() {
+    return textMessages[Math.floor(Math.random() * textMessages.length)];
+}

@@ -76,9 +76,16 @@ new settimeout will be there and fetchSuggestions() will be called after 200 mse
 
 
 
-### Loading Live Video Comments
-#### Issues :
-> #### Data Layer : Getting live data
-> #### UI Layer : Getting Data Updated on webpage
+# Loading Live Video Comments
+## Issues :
+- ## Data Layer : Getting live data
+- ## UI Layer : Getting Data Updated on webpage
 
-# Watch from :  [11:50](https://namastedev.com/learn/namaste-react/wrapping-up-youtube-project)
+
+# How to do : Two ways :
+- ## Websockets 
+   - ### Bi directional between UI and Server with no regular interval
+   - ### Example : Zerodha or Live Trading App where data changing every milliseconds or Whatsapp
+-  ## API Polling
+   - ### Data flow from Server to UI after an interval
+   - ### Example : Gmail

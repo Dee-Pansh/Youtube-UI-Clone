@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/myAppSlice';
 import { useSearchParams } from 'react-router-dom';
-import Shimmer from "./Shimmer";
-import { VIDEO_COMMENTS_API } from "../utils/constants";
-import Comments from './Comments';
-import Suggestion from "./Suggestion";
 import CommentsContainer from "./CommentsContainer";
-
-
-/*
-Comment Component Conditional Rendering
- {
-  comments.length === 0
-    ?
-    <Shimmer />
-    :
-    <Comments comments={comments} />
-} 
-*/
-
+import LiveChat from './LiveChat';
 
 
 
@@ -28,22 +12,17 @@ const WatchPage = () => {
   const [searchParams] = useSearchParams()
   const id = searchParams.get("v");
   const dispatch = useDispatch();
-  // const [comments, setComments] = useState([]);
 
   useEffect(() => {
     dispatch(closeMenu());
-    // fetchComments();
   }, []);
 
 
-  // const fetchComments = async () => {
-  //   const data = await fetch(VIDEO_COMMENTS_API + id);
-  //   const json = await data.json();
-  //   setComments(json.items);
-  // }
 
   return (
     <div className='flex flex-col mx-auto w-[90%]'>
+
+      <div className='flex w-full'>
 
       <div className='flex justify-between'>
         <iframe className='rounded-3xl'
@@ -56,10 +35,14 @@ const WatchPage = () => {
           allowFullScreen
         >
         </iframe>
-        <Suggestion videoId={id} />
       </div>
 
-      <CommentsContainer/>
+      <div className='w-full'>
+        <LiveChat />
+      </div>
+
+      </div>
+      <CommentsContainer />
 
     </div>
   )
