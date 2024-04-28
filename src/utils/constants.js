@@ -10,3 +10,4 @@ export const YOUTUBE_SEARCH_SUGGESTION=`http://suggestqueries.google.com/complet
 
 export const YOUTUBE_SEARCH_VIDEOS=`https://www.googleapis.com/youtube/v3/search?part=snippet&key=${GOOGLE_API_KEY}&q=`
 
+export const LIVE_CHAT_COUNT=10;
