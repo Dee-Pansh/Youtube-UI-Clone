@@ -9,11 +9,22 @@ const VideoContainer = () => {
 
   const [videos, setVideos] = useState([]);
   const contextState = useContext(searchContext);
-  useEffect(() => {fetchVideos()}, [contextState.search]);
+  const [maxResults,setMaxResults]=useState(20);
+  useEffect(() => {fetchVideos();
+  }, [contextState.search,maxResults]);
+
+  const handleScroll=()=>{
+    const scrollTop=document.documentElement.scrollTop;
+    const clientHeight=document.documentElement.clientHeight;
+    const scrollHeight=document.documentElement.scrollHeight;
+    if (scrollTop + clientHeight >= scrollHeight)
+    setMaxResults(maxResults+50);
+  }
 
   const fetchVideos = async () => {
     if (contextState.search === "popular") {
-      const videos = await fetch(YOUTUBE_VIDEOS_API)
+      console.log("max results : ",maxResults);
+      const videos = await fetch(YOUTUBE_VIDEOS_API+maxResults)
       const json = await videos.json();
       setVideos(json.items);
     }
@@ -24,12 +35,14 @@ const VideoContainer = () => {
     }
   }
 
+ 
+
 console.log("videos loaded are : ",videos);
 
   if (videos.length === 0)
     return <Shimmer />
 
-  return (<div className='flex flex-wrap justify-center'>
+  return (<div className='flex flex-wrap justify-center border h-[80vh] overflow-y-scroll' onScroll={handleScroll}>
     {
       videos.map(
       (video,index) =>
