@@ -15,32 +15,32 @@ const commentsData=[
                         replies:[
                             {
                                 name:"Manas",
-                                text:"Teri maaki chu",
+                                text:"Hello Chandrachud",
                             },
                             {
                                 name:"Pranav",
-                                text:"Teri maaki chu",
+                                text:"Hi Chandu Sir",
                                 replies:[] 
                             },
                             {
                                 name:"Abhinandan",
-                                text:"Teri maaki chu",
+                                text:"Hey",
                             }
                         ]
                     }
                 ]
             },
             {
-                name:"Junglie",
-                text:"I am junglie",
+                name:"Jungle",
+                text:"I am new to youtube",
                 replies:[
                     {
-                        name:"Bhangie",
-                        text:"I am bhangie"
+                        name:"Bhargav",
+                        text:"Hi Jungle, welcome to youtube"
                     },
                     {
                         name:"Vivek",
-                        text:"I am Vivek"
+                        text:"Round of appluase to Vivek and Jungle Bro"
                     }
                 ]
             }
